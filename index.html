@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Emma's Portfolio</title>
+  <script src="em.js" defer></script>
+
   <link rel="stylesheet" href="style3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
 
@@ -18,59 +22,136 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
-      <img src="ema.jpg" alt="Your Photo" class="profile-photo">
-      <h1 class="hero-title">Hello, I'm Emma</h1>
-      <p class="hero-subtitle">A Backend Developer &  Ai/Machine learning  Enthusiast</p>
+      <img src="ema.jpg" alt="Emma's Photo" class="profile-photo animate__animated animate__fadeIn">
+      <h1 class="hero-title animate__animated animate__fadeInDown">Hello, I'm Emma</h1>
+      <p class="hero-subtitle animate__animated animate__fadeInUp">A Backend Developer &amp; AI/Machine Learning Enthusiast</p>
       <div class="button-container">
-      <a href="#about" class="cta-button">Learn More</a>
-      <!-- GitHub Button -->
-      <a href="https://github.com/obadoni2" target="_blank" class="github-button">
-        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="github-logo"> Visit GitHub
-      </a>
+        <a href="#about" class="cta-button animate__animated animate__fadeInLeft">Learn More</a>
+        <a href="https://github.com/obadoni2" target="_blank" class="github-button animate__animated animate__fadeInRight">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="github-logo"> Visit GitHub
+        </a>
       </div>
-      
-        
-      
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="about-section">
-    <h2>About Me</h2>
-    <p>
-      I am a passionate developer with a focus on creating stunning user interfaces
-      and building web applications.
+    <h2 class="animate__animated animate__fadeIn">About Me</h2>
+    <p class="animate__animated animate__fadeIn">
+      I am a passionate developer with a focus on creating robust backend systems and exploring the fascinating world of AI and Machine Learning. I have experience in building scalable web applications and integrating AI models into real-world solutions.
     </p>
+    <div class="skills">
+      <div class="skill">
+        <h3>Backend Development</h3>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 90%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>AI &amp; Machine Learning</h3>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 85%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>Cloud Computing</h3>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 80%;"></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects" class="projects-section">
-    <h2>My Projects</h2>
+    <h2 class="animate__animated animate__fadeIn">My Projects</h2>
     <div class="projects">
-      <div class="project">
-        <h3>Project 1</h3>
-        <p>Description of project 1</p>
+      <!-- Project 1 -->
+      <div class="project animate__animated animate__fadeInLeft">
+        <h3>E-commerce Backend System</h3>
+        <div class="project-slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="predict.jpg" alt="E-commerce Architecture Diagram">
+              <img src="predi.jpg" alt="Database Schema Design">
+              <img src="heart.jpg" alt="Data Analysis Dashboard">
+            </div>
+            <div class="slide">
+              <img src="predict.jpg" alt="API Documentation">
+              <img src="predi.jpg" alt="Performance Metrics">
+              <img src="heart.jpg" alt="Data Analysis Dashboard">
+            </div>
+          </div>
+          <button class="prev">❮</button>
+          <button class="next">❯</button>
+        </div>
+        <p>Scalable backend system handling 10k+ RPM with Node.js and MongoDB.</p>
+        <a href="#" class="project-link">View Details</a>
       </div>
-      <div class="project">
-        <h3>Project 2</h3>
-        <p>Description of project 2</p>
+
+      <!-- Project 2 -->
+      <div class="project animate__animated animate__fadeInRight">
+        <h3>Customer Churn Prediction</h3>
+        <div class="project-slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="heart.jpg" alt="Data Analysis Dashboard">
+              <img src="heart2.jpg" alt="Feature Importance Chart">
+            </div>
+            <div class="slide">
+              <img src="heart.jpg" alt="Model Training Process">
+              <img src="heart2.jpg" alt="Results Visualization">
+            </div>
+          </div>
+          <button class="prev">❮</button>
+          <button class="next">❯</button>
+        </div>
+        <p>Machine learning model achieving 92% accuracy using XGBoost and TensorFlow.</p>
+        <a href="#" class="project-link">View Details</a>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out via email or connect on LinkedIn!</p>
-    <a href="mailto:youremail@example.com" class="contact-link">Send me an Email</a>
-    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="contact-link">Connect on LinkedIn</a>
+    <h2 class="animate__animated animate__fadeIn">Contact Me</h2>
+    <p class="animate__animated animate__fadeIn">Feel free to reach out via email or connect on LinkedIn and Twitter</p>
+    <div class="contact-links">
+      <a href="mailto:obadoniemma@gmail.com" class="contact-link animate__animated animate__fadeInLeft">Send me an Email</a>
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="contact-link animate__animated animate__fadeInRight">Connect on LinkedIn</a>
+      <a href="https://www.x.com/@eobadoni" target="_blank" class="contact-link animate__animated animate__fadeInRight">Connect on X</a>
+    </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2023 Emma's Portfolio. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://github.com/obadoni2" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.x.com/@Eobadoni" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:obadoniemma@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Full Size Image">
+  </div>
+
+  <!-- External Script -->
+
+  
 </body>
 </html>
