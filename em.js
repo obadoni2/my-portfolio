@@ -1,9 +1,9 @@
 // Wrap all DOM-dependent code inside DOMContentLoaded
+// Wrap all DOM-dependent code inside DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
-  
     mobileMenu.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
@@ -21,59 +21,44 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   
-    // Project Slider Functionality (with Auto Slide)
+    // Project Slider Functionality (Auto & Manual)
     document.querySelectorAll('.project-slider').forEach(slider => {
       let slideIndex = 0;
-      const slides = slider.querySelector('.slides');
-      const totalSlides = slides.children.length;
+      const slidesContainer = slider.querySelector('.slides');
+      const totalSlides = slidesContainer.children.length;
   
       const updateSlider = () => {
-        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
       };
   
-      // Next button
-      slider.querySelector('.next').addEventListener('click', () => {
+      // Manual navigation with Next button
+      const nextButton = slider.querySelector('.next');
+      nextButton.addEventListener('click', () => {
         slideIndex = (slideIndex + 1) % totalSlides;
         updateSlider();
       });
   
-      // Previous button
-      slider.querySelector('.prev').addEventListener('click', () => {
+      // Manual navigation with Previous button
+      const prevButton = slider.querySelector('.prev');
+      prevButton.addEventListener('click', () => {
         slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
         updateSlider();
       });
   
-      // Auto slide every 5 seconds (5000 milliseconds)
+      // Advance slide when clicking on the visible image
+      // This allows a click on the image to manually advance the slide.
+      slider.querySelectorAll('.slide img').forEach(image => {
+        image.addEventListener('click', () => {
+          slideIndex = (slideIndex + 1) % totalSlides;
+          updateSlider();
+        });
+      });
+  
+      // Automatic sliding every 5 seconds (5000 milliseconds)
       setInterval(() => {
         slideIndex = (slideIndex + 1) % totalSlides;
         updateSlider();
       }, 5000);
     });
-  
-    // Lightbox Functionality for Slide Images
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.close');
-  
-    // Attach click event listeners to all images within slides
-    document.querySelectorAll('.slide img').forEach(image => {
-      image.addEventListener('click', () => {
-        lightboxImg.src = image.src;
-        lightbox.style.display = 'flex';
-      });
-    });
-  
-    // Close lightbox when the close button is clicked
-    closeBtn.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-  
-    // Optional: Close lightbox when clicking outside the image
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
   });
   
-
